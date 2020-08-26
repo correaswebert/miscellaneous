@@ -1,0 +1,30 @@
+swebert@live.com
+
+regex to search for emails
+/\b[a-zA-Z][\w.-]*@[a-z]+(\.[a-z]+){1,2}\b/g
+
+- \b : word boundaried  :=  _abc@domain.com hence won't match
+- [a-zA-Z] : starts with an alphabet
+- [\w.-]* : can then contain any of alphanumeric or `.` or `-`
+- @ : should contain `@` symbol
+- [a-z]+ : one or more lower-case alphabets
+- (\.[a-z]+){1,2} : start with `.` followed by lower-case alphabets
+                    whole group should be present once or twice
+- \b : word boundaried   :=   abc@domain.com_ hence won't match
+
+
+from the net for python
+[a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
+
+for vim
+/\v[a-zA-Z0-9.-_]*\@[a-z]+(\.[a-z]+){1,2}
+
+genius.sb@`t.1920@gmail.com`      backticked portion matched for email!!!!
+
+
+
+:s@\n@\="\r" . expand("$HOME") . "\r"@
+This replaces an end-of-line with a new line containing the value of $HOME.
+
+        s/E/\="\<Char-0x20ac>"/g
+This replaces each 'E' character with a euro sign.  Read more in <Char->.
